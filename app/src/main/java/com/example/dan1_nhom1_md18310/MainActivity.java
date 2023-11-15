@@ -10,8 +10,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -20,10 +22,19 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
+
+
+    QLThanhVienFragment thanhVienFragment;
+    TKDoanhThuFragment DoanhThuFragment;
+    TThanhVienFragment tThanhVienFragment;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Toolbar toolbar = findViewById(R.id.Toolbar);
         FrameLayout frameLayout = findViewById(R.id.FrameLayout);
@@ -61,9 +72,6 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new TThanhVienFragment();
 
 
-//                } else if (item.getItemId() == R.id.mnDMK) {
-//                    showDialogDoiMK();
-
                 } else if (item.getItemId() == R.id.mnDX) {
                     Intent intent = new Intent(MainActivity.this, DangNhap.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -86,6 +94,16 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        SharedPreferences preferences = getSharedPreferences("ThongTin",MODE_PRIVATE);
+        String loaiTk= preferences.getString("taiKhoan","");
+        if (!loaiTk.equals("admin")){
+            Menu menu = nav.getMenu();
+            menu.findItem(R.id.mnTTV).setVisible(false);
+            menu.findItem(R.id.mnQLTV).setVisible(false);
+            menu.findItem(R.id.mnDoanhthu).setVisible(false);
+        }
+
     }
 
     @Override

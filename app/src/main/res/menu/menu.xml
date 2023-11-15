@@ -16,12 +16,12 @@
         android:id="@+id/mnQLTV"
         android:icon="@drawable/baseline_groups_2_24"
         android:title="Quản lý thành viên"/>
-    <menu>
+
             <item
                 android:id="@+id/mnDoanhthu"
                 android:icon="@drawable/doanhthu"
                 android:title="Doanh thu"/>
-    </menu>
+
     <item
         android:id="@+id/mnTTV"
         android:icon="@drawable/baseline_groups_2_24"
