@@ -13,6 +13,7 @@
         android:orientation="vertical">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/Toolbar"
+            android:background="#039BE5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <FrameLayout

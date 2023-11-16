@@ -6,14 +6,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class Dbhelper extends SQLiteOpenHelper {
     public Dbhelper(Context context){
-        super(context,"DAN1",null,1);
+        super(context,"DAN9",null,1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         String Admin = "CREATE TABLE ADMIN(maAD TEXT PRIMARY KEY,hoTen TEXT ,matKhau TEXT,taiKhoan TEXT)";
         db.execSQL(Admin);
-        String Nhanvien= "CREATE TABLE NHANVIEN(maTV INTEGER PRIMARY KEY AUTOINCREMENT,hoTen TEXT,luong INTEGER)";
+        String Nhanvien= "CREATE TABLE NHANVIEN(maTV INTEGER PRIMARY KEY AUTOINCREMENT,hoTen TEXT,soDT TEXT,luong DOUBLE)";
         db.execSQL(Nhanvien);
         String LoaiHang= "CREATE TABLE LOAIHANG(maLoai INTEGER PRIMARY KEY AUTOINCREMENT,tenLoai TEXT)";
         db.execSQL(LoaiHang);
@@ -25,7 +25,7 @@ public class Dbhelper extends SQLiteOpenHelper {
         db.execSQL(HoaDonCT);
         String eAdmin="INSERT INTO ADMIN VALUES('tunm','Minh Tu','123','admin'),('toan','Quoc Toan','123','nhanvien')";
         db.execSQL(eAdmin);
-        String eNhanvien="INSERT INTO NHANVIEN VALUES(1,'Minh Tu',100000),(2,'QuocToan',10000990)";
+        String eNhanvien="INSERT INTO NHANVIEN VALUES(1,'Minh Tu','0976614573',100000),(2,'QuocToan','0972970239',10000990)";
         db.execSQL(eNhanvien);
         String eLoaiHang="INSERT INTO LOAIHANG VALUES(1,'Iphone'),(2,'SamSung'),(3,'Oppo')";
         db.execSQL(eLoaiHang);
