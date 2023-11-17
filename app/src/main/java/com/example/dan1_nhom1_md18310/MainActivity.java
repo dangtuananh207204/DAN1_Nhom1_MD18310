@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.mnQLTV) {
                     fragment = new QLThanhVienFragment();
 
-
                 } else if (item.getItemId() == R.id.mnDoanhthu) {
                     fragment = new TKDoanhThuFragment();
 
