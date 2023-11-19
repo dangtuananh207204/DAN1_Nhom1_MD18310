@@ -1,5 +1,6 @@
 package com.example.dan1_nhom1_md18310.DAO;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -29,5 +30,37 @@ public class AdminDAO {
         }else {
             return false;
         }
+    }
+
+    public boolean taotaikhoan(String maAD, String hoTen, String matKhau){
+        SQLiteDatabase sqLiteDatabase = dbhelper.getWritableDatabase();
+
+        if (checkTaiKhoan(sqLiteDatabase,maAD)){
+            sqLiteDatabase.close();
+            return false;
+        }
+
+        ContentValues values = new ContentValues();
+        values.put("maAD",maAD);
+        values.put("hoTen",hoTen);
+        values.put("matKhau",matKhau);
+        values.put("taiKhoan","nhanvien");
+
+        sqLiteDatabase.insert("ADMIN",null,values);
+        sqLiteDatabase.close();
+        return  true;
+    }
+
+    private boolean checkTaiKhoan(SQLiteDatabase sqLiteDatabase, String maAD){
+        String[] projection = {"maAD"};
+        String selection = "maAD=?";
+        String[] selectionArgs = {maAD};
+
+        Cursor cursor = sqLiteDatabase.query("ADMIN", projection, selection, selectionArgs, null, null, null);
+
+        boolean exists = cursor.getCount() > 0;
+
+        cursor.close();
+        return exists;
     }
 }

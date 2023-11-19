@@ -26,6 +26,10 @@
         android:id="@+id/mnTTV"
         android:icon="@drawable/baseline_groups_2_24"
         android:title="Thêm thành viên"/>
+            <item
+                android:id="@+id/mnTaoTaiKhoan"
+                android:icon="@drawable/baseline_key_24"
+                android:title="Tạo tài khoản"/>
 
 
             <item

@@ -58,7 +58,7 @@ public class QLLoaiHangAdapter extends RecyclerView.Adapter<QLLoaiHangAdapter.Vi
                         notifyDataSetChanged();
                         break;
                     case -1:
-                        Toast.makeText(context, "Ko thể xóa loại sách này vì đã có loại sách này", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Ko thể xóa loại hàng này vì đã có trong hàng", Toast.LENGTH_SHORT).show();
                         break;
                     case 0:
                         Toast.makeText(context, "Xóa loại sách ko thành công", Toast.LENGTH_SHORT).show();
