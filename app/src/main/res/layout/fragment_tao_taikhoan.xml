@@ -1,40 +1,67 @@
-<!-- fragment_employee.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/maADEditText"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Mã AD"
-        android:inputType="text"/>
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"
+        app:cardCornerRadius="20dp">
 
-    <EditText
-        android:id="@+id/hoTenEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/maADEditText"
-        android:layout_marginTop="16dp"
-        android:hint="Họ Tên"
-        android:inputType="text"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/matKhauEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/hoTenEditText"
-        android:layout_marginTop="16dp"
-        android:hint="Mật Khẩu"
-        android:inputType="textPassword"/>
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tạo Tài Khoản Nhân Viên"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/createEmployeeAccountButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/matKhauEditText"
-        android:layout_marginTop="16dp"
-        android:text="Tạo Tài Khoản Nhân Viên"
-        android:layout_centerHorizontal="true"/>
+
+            <EditText
+                android:id="@+id/maADEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Mã AD"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/hoTenEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Họ Tên"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/matKhauEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Mật Khẩu"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/createEmployeeAccountButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+                android:background="@drawable/custom"
+               android:textSize="15dp"
+                android:text="Hoàn Thành"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </RelativeLayout>
