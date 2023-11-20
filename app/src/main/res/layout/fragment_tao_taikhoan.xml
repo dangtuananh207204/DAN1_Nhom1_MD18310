@@ -1,0 +1,40 @@
+<!-- fragment_employee.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/maADEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mã AD"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/hoTenEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/maADEditText"
+        android:layout_marginTop="16dp"
+        android:hint="Họ Tên"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/matKhauEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hoTenEditText"
+        android:layout_marginTop="16dp"
+        android:hint="Mật Khẩu"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/createEmployeeAccountButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/matKhauEditText"
+        android:layout_marginTop="16dp"
+        android:text="Tạo Tài Khoản Nhân Viên"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

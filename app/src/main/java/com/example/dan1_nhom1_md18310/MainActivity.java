@@ -74,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.mnTTV) {
                     fragment = new TThanhVienFragment();
 
+                }else if (item.getItemId() == R.id.mnTaoTaiKhoan) {
+                    fragment = new FragmentTaoTaikhoan();
+
+
                 } else if (item.getItemId() == R.id.mnDMK) {
                     showDialogDoiMK();
 
@@ -108,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             menu.findItem(R.id.mnTTV).setVisible(false);
             menu.findItem(R.id.mnQLTV).setVisible(false);
             menu.findItem(R.id.mnDoanhthu).setVisible(false);
+            menu.findItem(R.id.mnTaoTaiKhoan).setVisible(false);
         }
 
     }
