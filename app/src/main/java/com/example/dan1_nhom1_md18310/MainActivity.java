@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.dan1_nhom1_md18310.DAO.DoiMKDao;
@@ -26,7 +27,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
-
+    ImageButton hang,donhang,thanhvien,doanhthu;
 
     QLThanhVienFragment thanhVienFragment;
     TKDoanhThuFragment DoanhThuFragment;
@@ -39,7 +40,74 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+         hang=findViewById(R.id.img_hang);
+         donhang=findViewById(R.id.img_donhang);
+         thanhvien=findViewById(R.id.img_thanhvien);
+         doanhthu=findViewById(R.id.img_doanhthu);
+        hang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Khởi tạo Fragment mới
+                Fragment fragment = new QLHangFragment();
 
+                // Lấy ra FragmentManager từ Activity
+                FragmentManager fragmentManager = getSupportFragmentManager();
+
+                // Thực hiện thay thế Fragment hiện tại bằng Fragment mới
+                fragmentManager.beginTransaction()
+                        .replace(R.id.FrameLayout, fragment)  // R.id.FrameLayout là id của FrameLayout trong layout chứa Fragment
+                        .addToBackStack(null)  // Cho phép người dùng quay trở lại Fragment trước đó bằng nút back
+                        .commit();
+            }
+        });
+        donhang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Khởi tạo Fragment mới
+                Fragment fragment = new QLHoaDonFragment();
+
+                // Lấy ra FragmentManager từ Activity
+                FragmentManager fragmentManager = getSupportFragmentManager();
+
+                // Thực hiện thay thế Fragment hiện tại bằng Fragment mới
+                fragmentManager.beginTransaction()
+                        .replace(R.id.FrameLayout, fragment)  // R.id.FrameLayout là id của FrameLayout trong layout chứa Fragment
+                        .addToBackStack(null)  // Cho phép người dùng quay trở lại Fragment trước đó bằng nút back
+                        .commit();
+            }
+        });
+        thanhvien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Khởi tạo Fragment mới
+                Fragment fragment = new QLThanhVienFragment();
+
+                // Lấy ra FragmentManager từ Activity
+                FragmentManager fragmentManager = getSupportFragmentManager();
+
+                // Thực hiện thay thế Fragment hiện tại bằng Fragment mới
+                fragmentManager.beginTransaction()
+                        .replace(R.id.FrameLayout, fragment)  // R.id.FrameLayout là id của FrameLayout trong layout chứa Fragment
+                        .addToBackStack(null)  // Cho phép người dùng quay trở lại Fragment trước đó bằng nút back
+                        .commit();
+            }
+        });
+        doanhthu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Khởi tạo Fragment mới
+                Fragment fragment = new TKDoanhThuFragment();
+
+                // Lấy ra FragmentManager từ Activity
+                FragmentManager fragmentManager = getSupportFragmentManager();
+
+                // Thực hiện thay thế Fragment hiện tại bằng Fragment mới
+                fragmentManager.beginTransaction()
+                        .replace(R.id.FrameLayout, fragment)  // R.id.FrameLayout là id của FrameLayout trong layout chứa Fragment
+                        .addToBackStack(null)  // Cho phép người dùng quay trở lại Fragment trước đó bằng nút back
+                        .commit();
+            }
+        });
         Toolbar toolbar = findViewById(R.id.Toolbar);
         FrameLayout frameLayout = findViewById(R.id.FrameLayout);
         NavigationView nav = findViewById(R.id.Nav);
@@ -62,7 +130,12 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.mnQLLH) {
                     fragment = new QLLHangFragment();
 
-                } else if (item.getItemId() == R.id.mnQLHD) {
+                } else if (item.getItemId() == R.id.mnHome) {
+                    Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);}
+
+                else if (item.getItemId() == R.id.mnQLHD) {
                     fragment = new QLHoaDonFragment();
 
                 } else if (item.getItemId() == R.id.mnQLTV) {
@@ -109,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
             menu.findItem(R.id.mnQLTV).setVisible(false);
             menu.findItem(R.id.mnDoanhthu).setVisible(false);
             menu.findItem(R.id.mnTaoTaiKhoan).setVisible(false);
+            menu.findItem(R.id.img_doanhthu).setVisible(false);
         }
 
     }

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/mnQLH"
+        android:id="@+id/mnHome"
         android:icon="@drawable/baseline_home_24"
+        android:title="Trang chủ "/>
+    <item
+        android:id="@+id/mnQLH"
+        android:icon="@drawable/baseline_shopping_cart_24"
         android:title="Quản lý hàng "/>
     <item
         android:id="@+id/mnQLLH"
