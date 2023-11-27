@@ -185,6 +185,7 @@ public class QLHoaDonFragment extends Fragment {
         //  Tạo và hiển thị AlertDialog
         AlertDialog dialog = builder.create();
         dialog.show();
+
     }
 
     private void setupRecyclerView() {

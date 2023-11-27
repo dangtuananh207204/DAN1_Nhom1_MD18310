@@ -38,6 +38,7 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.ViewHolder
     private Context context;
     private QLHoaDonFragment qlHoaDonFragment;
 
+
     public HoaDonAdapter(ArrayList<QuanLyHoaDon> list, Context context) {
         this.list = list;
         this.context = context;
