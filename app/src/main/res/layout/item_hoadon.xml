@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bogochoadon"
+    android:layout_margin="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        >
+
+
+           <TextView
+               android:id="@+id/txtmaHoaDon"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="5dp"
+               android:text="Mã hóa đơn: "/>
+
+        <TextView
+            android:id="@+id/txtTenHang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Tên hàng: "/>
+        <TextView
+            android:id="@+id/txtTenLoaiHang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Tên loại hàng: "/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/txtsoLuong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Số lượng: "/>
+
+            <ImageView
+                android:id="@+id/chitietHoaDon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_chitiet_hoa_don"
+                android:layout_marginLeft="220dp"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtGiaHang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Giá: "/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/txtTrangThai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Trạng thái: "/>
+
+            <Button
+                android:id="@+id/btnTrangThai"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="ĐÃ GIAO"
+                android:backgroundTint="#89F446"
+                android:padding="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/btnDeleteHD"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/delete" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

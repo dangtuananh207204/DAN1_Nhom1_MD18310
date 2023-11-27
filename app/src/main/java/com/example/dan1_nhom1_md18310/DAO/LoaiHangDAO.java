@@ -68,6 +68,7 @@ public class LoaiHangDAO {
         }else {
             return true;
         }
-
     }
+
+
 }

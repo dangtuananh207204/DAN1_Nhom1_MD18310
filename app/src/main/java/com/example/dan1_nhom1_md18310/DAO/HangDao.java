@@ -27,6 +27,8 @@ list.add(new QuanLyHang(cursor.getInt(0),cursor.getString(1),cursor.getString(2)
     }
     return list;
 }
+
+
 public boolean addHang(String tenHang,int maLoaiHang,int giaHang,String RAM,String ROM,String Mau,int soLuong){
 SQLiteDatabase db=dbhelper.getWritableDatabase();
     ContentValues values =new ContentValues();
@@ -59,4 +61,20 @@ long check=db.update("HANG",values,"maHang = ?",new String[]{String.valueOf(maHa
 if (check==-1) return false;
 return true;
     }
+
+
+
+    public ArrayList<QuanLyHang> getDSHangTheoLoai(int maLoai) {
+        ArrayList<QuanLyHang> list = new ArrayList<>();
+        SQLiteDatabase db = dbhelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT h.maHang, h.tenHang, lh.tenLoai, h.giaHang, h.RAM, h.ROM, h.Mau, h.soLuong FROM HANG h INNER JOIN LOAIHANG lh ON h.maLoai = lh.maLoai WHERE h.maLoai = ?", new String[]{String.valueOf(maLoai)});
+        if (cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            do {
+                list.add(new QuanLyHang(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getInt(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getInt(7)));
+            } while (cursor.moveToNext());
+        }
+        return list;
+    }
+
 }
