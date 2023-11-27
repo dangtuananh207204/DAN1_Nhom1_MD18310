@@ -42,6 +42,7 @@ values.put("soLuong",soLuong);
 long check=db.insert("HANG",null,values);
 if (check == -1) return false;
 return true;
+
 }
     public int xoaSach(int maHang) {
         SQLiteDatabase db = dbhelper.getWritableDatabase();

@@ -189,7 +189,6 @@ public class QLHoaDonFragment extends Fragment {
 
     private void setupRecyclerView() {
         hoaDonAdapter = new HoaDonAdapter(list, getContext());
-
     }
 
 }

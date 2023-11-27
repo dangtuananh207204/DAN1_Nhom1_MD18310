@@ -100,6 +100,7 @@ public class QLHangFragment extends Fragment {
         return view;
     }
     private void showDialogthem(){
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         LayoutInflater inflater = getLayoutInflater();
         View view = inflater.inflate(R.layout.dialogthem,null);

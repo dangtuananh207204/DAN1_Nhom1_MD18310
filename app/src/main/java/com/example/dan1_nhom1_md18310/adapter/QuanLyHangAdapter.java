@@ -162,6 +162,7 @@ public class QuanLyHangAdapter extends RecyclerView.Adapter<QuanLyHangAdapter.Vi
                         list.clear();
                         list = dao.getDSHang();
                         notifyDataSetChanged();
+
                     } else {
                         Toast.makeText(context, "Sửa mới thất bại", Toast.LENGTH_SHORT).show();
                     }
