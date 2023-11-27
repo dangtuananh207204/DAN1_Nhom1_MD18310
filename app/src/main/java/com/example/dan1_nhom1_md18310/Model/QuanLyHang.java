@@ -4,6 +4,7 @@ public class QuanLyHang {
 //    (maHang INTEGER PRIMARY KEY AUTOINCREMENT,tenHang TEXT,giaHang INTEGER,maLoai INTEGER REFERENCES
 //    LOAIHANG(maLoai),RAM TEXT,ROM TEXT,Mau TEXT,soLuong INTEGER)
 private int maHang;
+
 private String tenHang;
 private String tenLoai;
 private int giaHang;
