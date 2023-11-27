@@ -1,8 +1,7 @@
 package com.example.dan1_nhom1_md18310.Model;
 
 public class QuanLyHang {
-//    (maHang INTEGER PRIMARY KEY AUTOINCREMENT,tenHang TEXT,giaHang INTEGER,maLoai INTEGER REFERENCES
-//    LOAIHANG(maLoai),RAM TEXT,ROM TEXT,Mau TEXT,soLuong INTEGER)
+
 private int maHang;
 
 private String tenHang;
