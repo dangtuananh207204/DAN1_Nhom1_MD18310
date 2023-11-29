@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class Dbhelper extends SQLiteOpenHelper {
 
     public Dbhelper(Context context){
-        super(context,"DAN12",null,1);
+        super(context,"DAN111",null,1);
     }
 
     @Override
@@ -22,7 +22,7 @@ public class Dbhelper extends SQLiteOpenHelper {
         db.execSQL(Hang);
         String HoaDon="CREATE TABLE HOADON(maHoaDon INTEGER PRIMARY KEY AUTOINCREMENT,maHang INTEGER REFERENCES LOAIHANG(maHang),maLoai INTEGER REFERENCES LOAIHANG(maLoai), soLuongMua INTEGER ,giaHoaDon INTEGER, traHang INTEGER )";
         db.execSQL(HoaDon);
-        String HoaDonCT="CREATE TABLE HOADONCT(maHoaDon INTEGER PRIMARY KEY AUTOINCREMENT,maHang INTEGER REFERENCES LOAIHANG(maHang),maLoai INTEGER REFERENCES LOAIHANG(maLoai),giaHoaDon INTEGER,RAM TEXT,ROM TEXT,Mau TEXT,soLuongMua INTEGER,Ngay TEXT)";
+        String HoaDonCT="CREATE TABLE HOADONCT(maHoaDon INTEGER PRIMARY KEY AUTOINCREMENT,maHang INTEGER REFERENCES LOAIHANG(maHang),maLoai INTEGER REFERENCES LOAIHANG(maLoai),giaHoaDon INTEGER,RAM TEXT,ROM TEXT,Mau TEXT,soLuongMua INTEGER)";
         db.execSQL(HoaDonCT);
         String eAdmin="INSERT INTO ADMIN VALUES('tunm','Minh Tu','123','admin'),('toan','Quoc Toan','123','nhanvien')";
         db.execSQL(eAdmin);
@@ -34,7 +34,7 @@ public class Dbhelper extends SQLiteOpenHelper {
         db.execSQL(eHang);
         String eHoaDon="INSERT INTO HOADON VALUES(1,1,1,2,70000000,1),(2,2,2,3,36000000,0)";
         db.execSQL(eHoaDon);
-        String eHoaDonCT="INSERT INTO HOADONCT VALUES(1,1,1,70000000,'8gb','128','Xanh',2,'22/11/2023'),(2,2,2,36000000,'8gb','128','Cam',3,'24/11/2023')";
+        String eHoaDonCT="INSERT INTO HOADONCT VALUES(1,1,1,70000000,'8gb','128','Xanh',2),(2,2,2,36000000,'8gb','128','Cam',3)";
         db.execSQL(eHoaDonCT);
 
     }
