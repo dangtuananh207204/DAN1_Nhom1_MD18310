@@ -20,7 +20,7 @@ public class Dbhelper extends SQLiteOpenHelper {
         db.execSQL(LoaiHang);
         String Hang= "CREATE TABLE HANG(maHang INTEGER PRIMARY KEY AUTOINCREMENT,tenHang TEXT,giaHang INTEGER,maLoai INTEGER REFERENCES LOAIHANG(maLoai),RAM TEXT,ROM TEXT,Mau TEXT,soLuong INTEGER)";
         db.execSQL(Hang);
-        String HoaDon="CREATE TABLE HOADON(maHoaDon INTEGER PRIMARY KEY AUTOINCREMENT,maHang INTEGER REFERENCES LOAIHANG(maHang),maLoai INTEGER REFERENCES LOAIHANG(maLoai), soLuongMua INTEGER ,giaHoaDon INTEGER, traHang INTEGER )";
+        String HoaDon="CREATE TABLE HOADON(maHoaDon INTEGER PRIMARY KEY AUTOINCREMENT,maHang INTEGER REFERENCES LOAIHANG(maHang),maLoai INTEGER REFERENCES LOAIHANG(maLoai), soLuongMua INTEGER ,giaHoaDon INTEGER,Ngay TEXT, traHang INTEGER )";
         db.execSQL(HoaDon);
         String HoaDonCT="CREATE TABLE HOADONCT(maHoaDon INTEGER PRIMARY KEY AUTOINCREMENT,maHang INTEGER REFERENCES LOAIHANG(maHang),maLoai INTEGER REFERENCES LOAIHANG(maLoai),giaHoaDon INTEGER,RAM TEXT,ROM TEXT,Mau TEXT,soLuongMua INTEGER)";
         db.execSQL(HoaDonCT);
@@ -32,7 +32,7 @@ public class Dbhelper extends SQLiteOpenHelper {
         db.execSQL(eLoaiHang);
         String eHang="INSERT INTO HANG VALUES(1,'Iphone 15',35000000,1,'8gb','128','Xanh',100),(2,'SamSung JS',12000000,2,'8gb','128','Cam',34)";
         db.execSQL(eHang);
-        String eHoaDon="INSERT INTO HOADON VALUES(1,1,1,2,70000000,1),(2,2,2,3,36000000,0)";
+        String eHoaDon="INSERT INTO HOADON VALUES(1,1,1,2,70000000,'22/11/2022',1),(2,2,2,3,36000000,'23/11/2023',0)";
         db.execSQL(eHoaDon);
         String eHoaDonCT="INSERT INTO HOADONCT VALUES(1,1,1,70000000,'8gb','128','Xanh',2),(2,2,2,36000000,'8gb','128','Cam',3)";
         db.execSQL(eHoaDonCT);
