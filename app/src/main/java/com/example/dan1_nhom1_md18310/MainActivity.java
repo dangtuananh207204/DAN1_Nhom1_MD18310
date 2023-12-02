@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     QLThanhVienFragment thanhVienFragment;
     TKDoanhThuFragment DoanhThuFragment;
     TThanhVienFragment tThanhVienFragment;
+    FragmentThongKe fragmentThongKe;
 
 
 
@@ -142,11 +143,10 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new QLThanhVienFragment();
 
                 } else if (item.getItemId() == R.id.mnDoanhthu) {
-                    fragment = new TKDoanhThuFragment();
+                    fragment = new FragmentThongKe();
                     
                 }else if (item.getItemId() == R.id.mnTaoTaiKhoan) {
                     fragment = new FragmentTaoTaikhoan();
-
 
                 } else if (item.getItemId() == R.id.mnDMK) {
                     showDialogDoiMK();
@@ -157,7 +157,8 @@ public class MainActivity extends AppCompatActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
 
-                }else {
+                }
+                else {
                     fragment = new QLHangFragment();
                 }
 

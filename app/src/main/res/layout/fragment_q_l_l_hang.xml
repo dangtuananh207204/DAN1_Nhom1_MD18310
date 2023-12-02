@@ -5,15 +5,10 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
+    android:background="#24DDD7"
     tools:context=".QLLHangFragment">
 
-    <EditText
-        android:id="@+id/edt_LoaiHang"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Nhập tên loại hàng"
-        android:paddingLeft="20dp"
-        />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -21,14 +16,12 @@
         android:orientation="horizontal"
         android:layout_gravity="center"
         >
-
-        <Button
-            android:id="@+id/btn_Them"
+        <EditText
+            android:id="@+id/edt_LoaiHang"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Thêm"
-
-
+            android:layout_height="55dp"
+            android:hint="Nhập tên loại hàng cần sửa"
+            android:paddingLeft="20dp"
             />
 
         <Button
@@ -50,6 +43,18 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleLoaiHang"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_add"
+        />
 
 </LinearLayout>

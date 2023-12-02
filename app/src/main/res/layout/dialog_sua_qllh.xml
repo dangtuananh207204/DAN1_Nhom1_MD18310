@@ -8,29 +8,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Thêm hóa đơn"
-        android:textSize="30dp"
-        android:layout_gravity="center"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tên loại hàng"
+        android:text="Sửa Loại Hàng"
+        android:textColor="#08E812"
         android:textSize="25dp"
-        />
-
-    <Spinner
-    android:id="@+id/spnTenHang"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
-
+        android:layout_gravity="center"/>
     <EditText
-        android:id="@+id/edtSoLuong"
+        android:id="@+id/edtSuaLoaiHang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Số lượng"/>
-
-
+        android:layout_marginTop="10dp"
+        android:hint="Nhập tên loại hàng"/>
 
 </LinearLayout>

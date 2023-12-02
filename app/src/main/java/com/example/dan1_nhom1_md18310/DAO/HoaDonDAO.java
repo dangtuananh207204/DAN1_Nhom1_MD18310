@@ -23,11 +23,11 @@ public class HoaDonDAO {
         ArrayList<QuanLyHoaDon> list = new ArrayList<>();
         SQLiteDatabase sql = dbhelper.getReadableDatabase();
         Cursor cursor = sql.rawQuery(
-                "SELECT hd.maHoaDon, h.tenHang, lh.tenLoai, hd.soLuongMua, hd.giaHoaDon, hd.traHang FROM HOADON hd INNER JOIN HANG h ON hd.maHang = h.maHang INNER JOIN LOAIHANG lh ON hd.maLoai = lh.maLoai ", null);
+                "SELECT hd.maHoaDon, h.tenHang, hd.soLuongMua, hd.giaHoaDon,hd.Ngay, hd.traHang FROM HOADON hd INNER JOIN HANG h ON hd.maHang = h.maHang ", null);
         if (cursor.getCount() != 0) {
             cursor.moveToFirst();
             do {
-                list.add(new QuanLyHoaDon(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getInt(3), cursor.getInt(4), cursor.getInt(5)));
+                list.add(new QuanLyHoaDon(cursor.getInt(0), cursor.getString(1), cursor.getInt(2), cursor.getInt(3),cursor.getString(4), cursor.getInt(5)));
             } while (cursor.moveToNext());
         }
         cursor.close();
@@ -51,14 +51,15 @@ public class HoaDonDAO {
         return  db.delete("HOADON","maHoaDon =?", new String[]{String.valueOf(maHoaDon)});
     }
 
-    public boolean themHoaDon(int maHang, int maLoai, int soLuong, int giaHoaDon, int traHang) {
+    public boolean themHoaDon(int maHang, int soLuong, int giaHoaDon,String Ngay, int traHang) {
         SQLiteDatabase sql = dbhelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("maHang", maHang);
-        values.put("maLoai", maLoai);
         values.put("soLuongMua", soLuong);
         values.put("giaHoaDon", giaHoaDon);
+        values.put("Ngay", Ngay);
         values.put("traHang", traHang);
+
 
         long check = sql.insert("HOADON", null, values);
         return check != -1;

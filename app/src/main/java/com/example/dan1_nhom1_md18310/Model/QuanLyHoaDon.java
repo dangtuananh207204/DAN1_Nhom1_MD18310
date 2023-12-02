@@ -3,20 +3,33 @@ package com.example.dan1_nhom1_md18310.Model;
 public class QuanLyHoaDon {
     private int maHoaDon;
     private String tenHang;
-    private String tenLoaiHang;
+
     private int soLuong;
     private int gia;
     private int trangThaiHoaDon;
 
+    private  String ngay;
+
+
+
+    public String getNgay() {
+        return ngay;
+    }
+
+    public void setNgay(String ngay) {
+        this.ngay = ngay;
+    }
+
     public QuanLyHoaDon() {
     }
 
-    public QuanLyHoaDon(int maHoaDon, String tenHang, String tenLoaiHang, int soLuong, int gia, int trangThaiHoaDon) {
+    public QuanLyHoaDon(int maHoaDon, String tenHang, int soLuong, int gia,String ngay, int trangThaiHoaDon) {
         this.maHoaDon = maHoaDon;
         this.tenHang = tenHang;
-        this.tenLoaiHang = tenLoaiHang;
+
         this.soLuong = soLuong;
         this.gia = gia;
+        this.ngay = ngay;
         this.trangThaiHoaDon = trangThaiHoaDon;
     }
 
@@ -36,13 +49,6 @@ public class QuanLyHoaDon {
         this.tenHang = tenHang;
     }
 
-    public String getTenLoaiHang() {
-        return tenLoaiHang;
-    }
-
-    public void setTenLoaiHang(String tenLoaiHang) {
-        this.tenLoaiHang = tenLoaiHang;
-    }
 
     public int getSoLuong() {
         return soLuong;
