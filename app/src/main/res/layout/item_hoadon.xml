@@ -29,12 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="Tên hàng: "/>
-        <TextView
-            android:id="@+id/txtTenLoaiHang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Tên loại hàng: "/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,8 +43,8 @@
 
             <ImageView
                 android:id="@+id/chitietHoaDon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:src="@drawable/icon_chitiet_hoa_don"
                 android:layout_marginLeft="220dp"
                 />
@@ -61,6 +56,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="Giá: "/>
+        <TextView
+            android:id="@+id/txtNgay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Ngày: "/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,7 +80,9 @@
                 android:text="ĐÃ GIAO"
                 android:backgroundTint="#89F446"
                 android:padding="5dp"/>
+
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="wrap_content"

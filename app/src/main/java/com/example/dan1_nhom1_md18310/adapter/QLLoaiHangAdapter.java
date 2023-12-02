@@ -26,11 +26,14 @@ public class QLLoaiHangAdapter extends RecyclerView.Adapter<QLLoaiHangAdapter.Vi
     private IteamClick iteamClick;
 
 
+
+
     public QLLoaiHangAdapter(Context context, ArrayList<QuanLyLoaiHang> list, IteamClick iteamClick) {
         this.context = context;
         this.list = list;
         this.iteamClick = iteamClick;
     }
+
 
     @NonNull
     @Override
@@ -74,6 +77,7 @@ public class QLLoaiHangAdapter extends RecyclerView.Adapter<QLLoaiHangAdapter.Vi
             public void onClick(View v) {
                 QuanLyLoaiHang quanLyLoaiHang = list.get(holder.getAdapterPosition());
                 iteamClick.onClickLoaiHang(quanLyLoaiHang);
+
             }
         });
     }

@@ -61,9 +61,9 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.ViewHolder
 
         holder.txtMaHoaDon.setText("Mã hóa đơn: "+list.get(position).getMaHoaDon());
         holder.txtTenHang.setText("Tên hàng: "+list.get(position).getTenHang());
-        holder.txtTenLoai.setText("Tên loại Hàng: "+list.get(position).getTenLoaiHang());
         holder.txtSoLuong.setText("Số lượng: "+list.get(position).getSoLuong());
         holder.txtGia.setText("Giá: "+list.get(position).getGia());
+        holder.txtNgay.setText("Ngày: "+list.get(position).getNgay());
 
         String trangthai= "";
         if (list.get(position).getTrangThaiHoaDon()==1){
@@ -138,7 +138,7 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.ViewHolder
 
     public  class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView txtMaHoaDon, txtTenHang, txtTenLoai,txtGia,txtSoLuong,txtTrangThai;
+        TextView txtMaHoaDon, txtTenHang,txtGia,txtSoLuong,txtNgay,txtTrangThai;
         Button btnTrahang;
         ImageView btnDeleteHD,chitietHoaDon;
         public ViewHolder(@NonNull View itemView) {
@@ -146,11 +146,10 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.ViewHolder
 
             txtMaHoaDon= itemView.findViewById(R.id.txtmaHoaDon);
             txtTenHang= itemView.findViewById(R.id.txtTenHang);
-            txtTenLoai = itemView.findViewById(R.id.txtTenLoaiHang);
             txtGia = itemView.findViewById(R.id.txtGiaHang);
             txtSoLuong= itemView.findViewById(R.id.txtsoLuong);
             txtTrangThai = itemView.findViewById(R.id.txtTrangThai);
-
+            txtNgay= itemView.findViewById(R.id.txtNgay);
             btnTrahang = itemView.findViewById(R.id.btnTrangThai);
 
             btnDeleteHD= itemView.findViewById(R.id.btnDeleteHD);
