@@ -1,6 +1,8 @@
 package com.example.dan1_nhom1_md18310.Model;
 
-public class QuanLyHoaDon {
+import java.io.Serializable;
+
+public class QuanLyHoaDon implements Serializable {
     private int maHoaDon;
     private String tenHang;
 
@@ -9,8 +11,33 @@ public class QuanLyHoaDon {
     private int trangThaiHoaDon;
 
     private  String ngay;
+    private String RAM;
+    private String ROM;
+    private String Mau;
 
+    public String getRAM() {
+        return RAM;
+    }
 
+    public void setRAM(String RAM) {
+        this.RAM = RAM;
+    }
+
+    public String getROM() {
+        return ROM;
+    }
+
+    public void setROM(String ROM) {
+        this.ROM = ROM;
+    }
+
+    public String getMau() {
+        return Mau;
+    }
+
+    public void setMau(String mau) {
+        Mau = mau;
+    }
 
     public String getNgay() {
         return ngay;
@@ -23,7 +50,19 @@ public class QuanLyHoaDon {
     public QuanLyHoaDon() {
     }
 
-    public QuanLyHoaDon(int maHoaDon, String tenHang, int soLuong, int gia,String ngay, int trangThaiHoaDon) {
+    public QuanLyHoaDon(int maHoaDon, String tenHang, int soLuong, int gia, String ngay,  int trangThaiHoaDon,String RAM, String ROM, String mau) {
+        this.maHoaDon = maHoaDon;
+        this.tenHang = tenHang;
+        this.soLuong = soLuong;
+        this.gia = gia;
+        this.trangThaiHoaDon = trangThaiHoaDon;
+        this.ngay = ngay;
+        this.RAM = RAM;
+        this.ROM = ROM;
+        Mau = mau;
+    }
+
+    public QuanLyHoaDon(int maHoaDon, String tenHang, int soLuong, int gia, String ngay, int trangThaiHoaDon) {
         this.maHoaDon = maHoaDon;
         this.tenHang = tenHang;
 

@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.dan1_nhom1_md18310.DAO.DoiMKDao;
@@ -179,11 +180,16 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("ThongTin",MODE_PRIVATE);
         String loaiTk= preferences.getString("taiKhoan","");
         if (!loaiTk.equals("admin")){
+            ImageButton imageButton=findViewById(R.id.img_thanhvien);
+            imageButton.setEnabled(false);
+            imageButton.setOnClickListener(null);
+            ImageButton imageButton1=findViewById(R.id.img_doanhthu);
+            imageButton1.setEnabled(false);
+            imageButton1.setOnClickListener(null);
             Menu menu = nav.getMenu();
             menu.findItem(R.id.mnQLTV).setVisible(false);
             menu.findItem(R.id.mnDoanhthu).setVisible(false);
             menu.findItem(R.id.mnTaoTaiKhoan).setVisible(false);
-            menu.findItem(R.id.img_doanhthu).setVisible(false);
         }
 
     }

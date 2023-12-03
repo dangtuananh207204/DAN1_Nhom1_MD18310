@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,11 +23,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dan1_nhom1_md18310.DAO.HoaDonDAO;
 import com.example.dan1_nhom1_md18310.DAO.LoaiHangDAO;
+import com.example.dan1_nhom1_md18310.HoaDonCT;
+import com.example.dan1_nhom1_md18310.Model.QuanLyHang;
 import com.example.dan1_nhom1_md18310.Model.QuanLyHoaDon;
 import com.example.dan1_nhom1_md18310.Model.QuanLyLoaiHang;
 import com.example.dan1_nhom1_md18310.QLHoaDonFragment;
 import com.example.dan1_nhom1_md18310.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -125,7 +130,20 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.ViewHolder
                 dialog.show();
             }
         });
+        holder.chitietHoaDon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+           onclick(hoaDon);
+            }
+        });
 
+    }
+    private void onclick(QuanLyHoaDon hoaDon){
+        Intent intent=new Intent(context, HoaDonCT.class);
+        Bundle bundle=new Bundle();
+        bundle.putSerializable("ten",hoaDon);
+        intent.putExtras(bundle);
+        context.startActivity(intent);
     }
 
 
