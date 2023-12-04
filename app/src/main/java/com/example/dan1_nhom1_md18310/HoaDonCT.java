@@ -30,13 +30,13 @@ public class HoaDonCT extends AppCompatActivity {
         Mau=findViewById(R.id.txtMau);
         soLuong=findViewById(R.id.txtsoLuong);
         btnthoat=findViewById(R.id.btnXoaSach_item);
-        maHang.setText("Ma Hang: "+hoaDon.getMaHoaDon());
-        tenHang.setText("Ten Hang: "+hoaDon.getTenHang());
-        giaHang.setText("Gia Hang:"+hoaDon.getGia());
+        maHang.setText("Mã Hàng: "+hoaDon.getMaHoaDon());
+        tenHang.setText("Tên Hàng: "+hoaDon.getTenHang());
+        giaHang.setText("Giá Hàng:"+hoaDon.getGia()+"VNĐ");
         Ram.setText("Ram:"+hoaDon.getRAM());
         Rom.setText("Rom: "+hoaDon.getROM());
-        Mau.setText("Mau:"+hoaDon.getMau());
-        soLuong.setText("So Luong:"+hoaDon.getSoLuong());
+        Mau.setText("Màu:"+hoaDon.getMau());
+        soLuong.setText("Số Lượng:"+hoaDon.getSoLuong());
         btnthoat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

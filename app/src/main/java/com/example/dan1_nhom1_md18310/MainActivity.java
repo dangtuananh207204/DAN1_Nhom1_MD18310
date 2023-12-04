@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Khởi tạo Fragment mới
-                Fragment fragment = new TKDoanhThuFragment();
+                Fragment fragment = new FragmentThongKe();
 
                 // Lấy ra FragmentManager từ Activity
                 FragmentManager fragmentManager = getSupportFragmentManager();

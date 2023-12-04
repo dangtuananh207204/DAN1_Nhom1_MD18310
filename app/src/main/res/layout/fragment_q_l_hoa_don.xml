@@ -4,26 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".QLHoaDonFragment"
-    android:background="#3FEDE8"
+    android:background="#BBD5D9"
     >
 
-    <TextView
-        android:id="@+id/txtHoaDon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Quản lý Hóa Đơn"
-        android:gravity="center"
-        android:textSize="25dp"
-        android:textStyle="bold|italic"
-        android:layout_marginTop="10dp"
-        android:textColor="#12A9ED"
-        android:layout_marginBottom="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycerQlHoaDon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/txtHoaDon"
+
 
         />
 

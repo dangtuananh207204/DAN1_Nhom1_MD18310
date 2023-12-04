@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#299DDD"
+    android:background="#78A7C1"
     >
 
 
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:text="Doanh thu:"
-            android:textColor="#A6A4A4"
+            android:textColor="#170909"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"/>
         <TextView
@@ -75,8 +75,8 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:layout_marginLeft="10dp"
-            android:text="10000000Vnd"
-            android:textColor="#DF4343"
+            android:text="......Vnd"
+            android:textColor="#171111"
             android:layout_marginTop="20dp"/>
     </LinearLayout>
 
