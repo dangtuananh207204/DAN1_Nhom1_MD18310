@@ -87,7 +87,7 @@
             android:layout_marginRight="25dp"
             android:layout_weight="1"
             android:backgroundTint="#D3EC0F"
-            android:text="Huy" />
+            android:text="Hủy" />
 
 
 

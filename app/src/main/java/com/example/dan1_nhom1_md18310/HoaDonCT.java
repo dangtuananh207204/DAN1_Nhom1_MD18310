@@ -33,8 +33,8 @@ public class HoaDonCT extends AppCompatActivity {
         maHang.setText("Mã Hàng: "+hoaDon.getMaHoaDon());
         tenHang.setText("Tên Hàng: "+hoaDon.getTenHang());
         giaHang.setText("Giá Hàng:"+hoaDon.getGia()+"VNĐ");
-        Ram.setText("Ram:"+hoaDon.getRAM());
-        Rom.setText("Rom: "+hoaDon.getROM());
+        Ram.setText("Ram:"+hoaDon.getRAM()+"GB");
+        Rom.setText("Rom: "+hoaDon.getROM()+"GB");
         Mau.setText("Màu:"+hoaDon.getMau());
         soLuong.setText("Số Lượng:"+hoaDon.getSoLuong());
         btnthoat.setOnClickListener(new View.OnClickListener() {

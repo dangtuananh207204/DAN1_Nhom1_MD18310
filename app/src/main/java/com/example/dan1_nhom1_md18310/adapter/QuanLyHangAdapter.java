@@ -50,8 +50,8 @@ public class QuanLyHangAdapter extends RecyclerView.Adapter<QuanLyHangAdapter.Vi
         holder.tvtenHang.setText("Tên Hàng: "+list.get(position).getTenHang());
         holder.tvtenLoai.setText("Tên Loại: "+list.get(position).getTenLoai());
         holder.tvgiaHang.setText("Giá Hàng: "+list.get(position).getGiaHang());
-        holder.tvRam.setText("Ram: "+list.get(position).getRAM());
-        holder.tvRom.setText("Rom: "+list.get(position).getROM());
+        holder.tvRam.setText("Ram: "+list.get(position).getRAM()+"GB");
+        holder.tvRom.setText("Rom: "+list.get(position).getROM()+"GB");
         holder.tvMau.setText("Màu: "+list.get(position).getMau());
         holder.tvsoLuong.setText("Số Lượng: "+list.get(position).getSoLuong());
         holder.btnXoa.setOnClickListener(new View.OnClickListener() {
