@@ -13,7 +13,7 @@
         android:layout_margin="10dp"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:background="#89E3D9"
+            android:background="#EFDADA"
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:gravity="center"
@@ -41,7 +41,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:text="Hóa đơn chi tiết"
+                    android:text="Hóa đơn chi tiết:"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

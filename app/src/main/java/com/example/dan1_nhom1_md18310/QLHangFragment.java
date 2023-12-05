@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,8 +37,10 @@ public class QLHangFragment extends Fragment {
     RecyclerView recyclerView;
    QuanLyHangAdapter adapter;
     HangDao hangDao;
-    ArrayList<QuanLyHang> list;
+    ArrayList<QuanLyHang> list=new ArrayList<>();
+    ArrayList<QuanLyHang> list2=new ArrayList<>();
     FloatingActionButton btnAddSach;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -87,6 +91,7 @@ public class QLHangFragment extends Fragment {
 
         hangDao = new HangDao(getContext());
         list = hangDao.getDSHang();
+        list2=hangDao.getDSHang();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         adapter = new QuanLyHangAdapter(getContext(), list);
@@ -95,6 +100,29 @@ public class QLHangFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 showDialogthem();
+            }
+        });
+        EditText edtim=view.findViewById(R.id.edSerach);
+        edtim.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                list.clear();
+             for (QuanLyHang qlh:list2){
+             if (qlh.getTenHang().contains(charSequence.toString())){
+                list.add(qlh);
+             }
+             }
+             adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
         return view;

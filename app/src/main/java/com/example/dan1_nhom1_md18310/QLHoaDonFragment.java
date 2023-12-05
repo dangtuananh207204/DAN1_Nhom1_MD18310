@@ -41,6 +41,8 @@ public class QLHoaDonFragment extends Fragment {
     HoaDonDAO hoaDonDAO;
     HangDao hangDao;
     ArrayList<QuanLyHoaDon> list;
+    ArrayList<QuanLyHoaDon> list2;
+    EditText edtim;
     HoaDonAdapter hoaDonAdapter;
 //    Spinner spnLH,spnH;
 private ArrayList<QuanLyHang> listH;
@@ -57,7 +59,29 @@ private ArrayList<QuanLyHang> listH;
         FloatingActionButton actionButton = view.findViewById(R.id.floatAdd);
         hoaDonDAO = new HoaDonDAO(getContext());
         hangDao = new HangDao(getContext());
+        list2=hoaDonDAO.getDSHoaDon();
+        edtim=view.findViewById(R.id.edSerach);
+        edtim.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            list.clear();
+            for (QuanLyHoaDon hd:list2){
+                if (String.valueOf(hd.getMaHoaDon()).contains(charSequence.toString())){
+                 list.add(hd);
+                }
+            }hoaDonAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         loadData();
 

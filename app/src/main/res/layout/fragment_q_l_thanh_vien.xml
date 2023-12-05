@@ -7,10 +7,17 @@
     tools:context=".QLThanhVienFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <EditText
+        android:layout_margin="10dp"
+        android:id="@+id/edSerach"
+        android:layout_width="match_parent"
+        android:hint="Tìm Kiếm"
+        android:layout_height="wrap_content"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/edSerach"
         >
 
     </androidx.recyclerview.widget.RecyclerView>

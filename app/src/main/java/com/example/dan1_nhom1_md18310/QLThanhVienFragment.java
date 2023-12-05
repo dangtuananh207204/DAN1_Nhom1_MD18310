@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +33,7 @@ public class QLThanhVienFragment extends Fragment {
 private RecyclerView recyclerView;
 private FloatingActionButton floatADD;
 NhanVienDao nhanVienDao;
+    NhanVienAdapter adapter;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -79,9 +82,33 @@ NhanVienDao nhanVienDao;
         floatADD=view.findViewById(R.id.floatadd);
         nhanVienDao=new NhanVienDao(getContext());
         ArrayList<NhanVien> list= nhanVienDao.getDS();
+        ArrayList<NhanVien> list2=nhanVienDao.getDS();
+        EditText edtim=view.findViewById(R.id.edSerach);
+        edtim.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+              list.clear();
+              for (NhanVien nv:list2){
+                  if (nv.getHoTen().contains(charSequence.toString())){
+                      list.add(nv);
+                  }
+              }
+               adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        NhanVienAdapter adapter = new NhanVienAdapter(getContext(),list,nhanVienDao);
+         adapter = new NhanVienAdapter(getContext(),list,nhanVienDao);
         recyclerView.setAdapter(adapter);
         floatADD.setOnClickListener(new View.OnClickListener() {
             @Override

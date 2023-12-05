@@ -7,11 +7,17 @@
     android:background="#BBD5D9"
     >
 
-
+    <EditText
+        android:layout_margin="10dp"
+        android:id="@+id/edSerach"
+        android:layout_width="match_parent"
+        android:hint="Tìm Kiếm"
+        android:layout_height="wrap_content"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycerQlHoaDon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/edSerach"
 
 
         />
@@ -21,11 +27,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+     android:backgroundTint="#2BC331"
         android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_add"
-
-    />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_add" />
 
 
 

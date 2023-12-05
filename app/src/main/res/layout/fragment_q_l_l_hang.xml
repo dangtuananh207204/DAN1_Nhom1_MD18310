@@ -55,6 +55,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="10dp"
         android:src="@drawable/ic_add"
+        android:backgroundTint="#2BC331"
         />
 
 </LinearLayout>
